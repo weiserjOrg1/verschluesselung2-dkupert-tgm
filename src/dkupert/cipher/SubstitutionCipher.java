@@ -1,9 +1,13 @@
 package dkupert.cipher;
+
+import dkupert.cipher.Exceptions.CipherException;
+
 /**
- * Uses the parent class MonoAlphabeticCipher to encrypt and decrypt text
+ * Uses the parent class MonoAlphabeticCipher to encrypt and decrypt text using the 
+ * SubstitutionCipher 
  * 
  * @author dkupert
- * @version 2018-10-10
+ * @version 2018-10-17
  */
 public class SubstitutionCipher extends MonoAlphabeticCipher {
 	/**

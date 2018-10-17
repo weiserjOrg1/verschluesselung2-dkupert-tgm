@@ -1,9 +1,14 @@
 package dkupert.cipher;
+import dkupert.cipher.Exceptions.CipherException;
+import dkupert.cipher.Exceptions.CipherIdencticalLetterException;
+import dkupert.cipher.Exceptions.CipherLetterNotSuitableException;
+import dkupert.cipher.Exceptions.CipherTooLongOrShortException;
+
 /**
  * This class provides all the methods to encrypt and decrypt text
  * 
  * @author dkupert
- * @version 2018-10-10
+ * @version 2018-10-17
  */
 public class MonoAlphabeticCipher implements Cipher{
 	//Constants

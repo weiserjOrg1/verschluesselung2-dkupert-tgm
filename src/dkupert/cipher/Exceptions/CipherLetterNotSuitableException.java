@@ -1,4 +1,4 @@
-package dkupert.cipher;
+package dkupert.cipher.Exceptions;
 /**
  * This class contains a custom exception which is used in MonoAlphabeticCipher
  * 
