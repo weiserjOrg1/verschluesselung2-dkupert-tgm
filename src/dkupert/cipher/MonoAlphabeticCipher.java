@@ -38,19 +38,10 @@ public class MonoAlphabeticCipher implements Cipher{
 	/**
 	 * Changes the secret alphabet after it passes the exception
 	 * @param secretAlphabet : is the new secret alphabet
+	 * @throws CipherException: throws the exception if a problem is found
 	 */
-	protected void setSecretAlphabet(String secretAlphabet) {
-		try {
-			this.secretAlphabet = checkSecretAlphabet(secretAlphabet);
-		}catch(CipherException e) {
-			System.out.println();
-		}
-	}
-	
-	protected void setSecretAlphabet2(String secretAlphabet) throws CipherException {
-
-			this.secretAlphabet = checkSecretAlphabet(secretAlphabet);
-
+	protected void setSecretAlphabet(String secretAlphabet) throws CipherException{
+		this.secretAlphabet = checkSecretAlphabet(secretAlphabet);
 	}
 	/**
 	 * Encrypts a Text
@@ -112,11 +103,11 @@ public class MonoAlphabeticCipher implements Cipher{
 					}
 				}
 				if(charCounter > 1) {
-					throw new CipherException("secret Alphabet contains two identica Letters");
+					throw new CipherIdencticalLetterException();
 				}
 			}
 		}else {
-			throw new CipherException("secret Alphabet is too short / long");
+			throw new CipherTooLongOrShortException();
 		}
 		for(int i = 0; i < alph.length(); i++) {
 			char c = alph.charAt(i);
@@ -126,7 +117,7 @@ public class MonoAlphabeticCipher implements Cipher{
 					) 
 			{
 			}else {
-				throw new CipherException("One Letter in the Alphabet is not suitable for the secret Alphabet");
+				throw new CipherLetterNotSuitableException();
 			}
 		}
 		return alph;

@@ -7,18 +7,20 @@ package dkupert.cipher;
  */
 public class SubstitutionCipher extends MonoAlphabeticCipher {
 	/**
-	 * 
-	 * @param secretAlphabet
+	 * Replaces the default Alphabet with the new secret one.
+	 * @param secretAlphabet: the new secret alphabet
+	 * @throws CipherException:  throws the exception if a problem is found
 	 */
 	public SubstitutionCipher(String secretAlphabet) throws CipherException {
-		super.setSecretAlphabet2(secretAlphabet);
+		super.setSecretAlphabet(secretAlphabet);
 	}
 
 	/**
-	 * 
-	 * @param secretAlphabet
+	 * Replaces the default Alphabet with the new secret one.
+	 * @param secretAlphabet: the new secret alphabet
+	 * @throws CipherException:  throws the exception if a problem is found
 	 */
-	public void setSecretAlphabet(String secretAlphabet) {
+	public void setSecretAlphabet(String secretAlphabet) throws CipherException {
 		super.setSecretAlphabet(secretAlphabet);
 	}
 
