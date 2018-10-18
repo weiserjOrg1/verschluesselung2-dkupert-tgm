@@ -20,7 +20,7 @@ public class ShiftCipher extends MonoAlphabeticCipher{
 		String newAlphabet = "";
 		int shiftValue = value; 
 		
-		if(value > 29  && value < 1) {
+		if(value > 29  || value < 1) {
 			throw new ShiftCipherException();
 		}
 		for(int i = 0; i < defaultAlphabet.length(); i++) {
