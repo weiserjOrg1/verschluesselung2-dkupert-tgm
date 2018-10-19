@@ -26,6 +26,7 @@ public class GUICipherController implements ActionListener{
 				v1.changeMod();
 			} catch (NumberFormatException | CipherException e1) {
 				v1.exceptionMessage(e1.toString());
+				v1.blockText();
 			}
 			v1.refresh();
 		}

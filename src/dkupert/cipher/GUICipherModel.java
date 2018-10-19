@@ -22,22 +22,18 @@ public class GUICipherModel {
 	}
 	
 	public void changeMode(String mode, String parameter) throws NumberFormatException, CipherException{
-		if(this.mode.equals(mode)) {
-			
-		}else {
-			switch(mode) {
-				case "shift" :
-					this.mac = new MonoAlphabeticCipher();
-					this.mac = new ShiftCipher(Integer.parseInt(parameter));
-					this.mode = "shift";
-				break;
-				case "sub" :
-					this.mac = new MonoAlphabeticCipher();
-					this.mac = new SubstitutionCipher(parameter);
-					this.mode = "shift";
-				break;
-			}
-		} 
+		switch(mode) {
+			case "shift" :
+				this.mac = new MonoAlphabeticCipher();
+				this.mac = new ShiftCipher(Integer.parseInt(parameter));
+				this.mode = "shift";
+			break;
+			case "sub" :
+				this.mac = new MonoAlphabeticCipher();
+				this.mac = new SubstitutionCipher(parameter);
+				this.mode = "shift";
+			break;
+		}
 	}	
 	
 	public String decrypt(String text) {

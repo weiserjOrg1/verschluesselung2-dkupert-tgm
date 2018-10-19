@@ -174,6 +174,13 @@ public class GUICipherView extends JFrame{
 		this.ja2.setBackground(Color.white);
 	}
 	
+	public void blockText() {
+		this.ja.setEnabled(false);
+		this.ja.setBackground(Color.gray);
+		this.ja2.setEnabled(false);
+		this.ja2.setBackground(Color.gray);
+	}
+	
 	public void Decrypt() {
 		String placeholder = this.m1.decrypt(this.ja2.getText());
 		this.ja.setText(placeholder);
