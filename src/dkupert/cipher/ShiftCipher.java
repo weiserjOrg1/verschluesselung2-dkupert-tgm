@@ -12,8 +12,9 @@ import dkupert.cipher.Exceptions.ShiftCipherException;
  */
 public class ShiftCipher extends MonoAlphabeticCipher{
 	/**
-	 * 
-	 * @param value
+	 * Set the shift value
+	 * @param value : the shift Value
+	 * @throws CipherException : throw the exception if the value can't be handeled
 	 */
 	public ShiftCipher(int value) throws CipherException{
 		String defaultAlphabet = "abcdefghijklmnopqrstuvwxyzäöüß";
@@ -35,8 +36,9 @@ public class ShiftCipher extends MonoAlphabeticCipher{
 		super.setSecretAlphabet(newAlphabet);
 	}
 	/**
-	 * 
-	 * @param value
+	 * Set the shift value
+	 * @param value : the shift Value
+	 * @throws CipherException : throw the exception if the value can't be handeled
 	 */
 	public void setShiftCipher(int value) throws CipherException{
 		String defaultAlphabet = "abcdefghijklmnopqrstuvwxyzäöüß";
