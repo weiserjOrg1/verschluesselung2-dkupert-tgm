@@ -9,6 +9,7 @@ import java.awt.ActiveEvent.*;
 import java.awt.event.*;
 
 /**
+ * This class listens to ActionEvents and decides what to do with them
  * 
  * @author dkupert
  * @version 2018-10-18
@@ -20,6 +21,11 @@ public class GUICipherController implements ActionListener{
 	
 	
 	@Override
+	/**
+	 * Is called whenever a ActionEvent is created
+	 * The method decides which Action to perform based on the ActionEvent
+	 * @param e : the ActionEvent in question
+	*/
 	public void actionPerformed(ActionEvent e) {
 		if(this.v1.isB1(e)) {
 			try {
@@ -52,6 +58,10 @@ public class GUICipherController implements ActionListener{
 		}
 		
 	}
+	//Constructor
+	/**
+	 * This is the default constructor for this class. It initializes the Model and View Object
+	 */
 	public GUICipherController() {
 		this.m1 = new GUICipherModel();
 		this.v1 = new GUICipherView(this.m1, this);

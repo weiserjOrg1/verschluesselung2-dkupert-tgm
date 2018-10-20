@@ -11,7 +11,7 @@ import java.awt.event.*;
 
 
 /**
- * 
+ * This Class is needed to display the GUI
  * @author dkupert
  * @version 2018-10-18
  */
@@ -32,7 +32,12 @@ public class GUICipherView extends JFrame{
 	private JButton b1,b2,b3,b4,b5,b6;
 	private Border border;
 	
-	
+	/**
+	 * This is the default constructor for this class. It initializes all the Attributes/Objects which are needed to display all the Elements in
+	 * the GUI
+	 * @param m : is the Model
+	 * @param c : is the Controller
+	 */
 	public GUICipherView(GUICipherModel m, GUICipherController c) {
 		this.m1 = m;
 		this.c1 = c;
@@ -152,16 +157,29 @@ public class GUICipherView extends JFrame{
 	}
 	
 	//Function
+	/**
+	 * This Method is used to reset the Text in a Textfield 
+	 */
 	public void b2Reset(){
 		this.jt.setText("");
 	}
+	/**
+	 * This Method is used to reset the Text in a Textfield 
+	 */
 	public void b4Reset(){
 		this.ja.setText("");
 	}
+	/**
+	 * This Method is used to reset the Text in a Textfield 
+	 */
 	public void b6Reset(){
 		this.ja2.setText("");
 	}
-	
+	/**
+	 * This Method is used to change the Cipher mode
+	 * @throws NumberFormatException : throws the Exception
+	 * @throws CipherException : throws the Exception
+	 */
 	public void changeMod() throws NumberFormatException, CipherException {
 		if(this.rb1.isSelected() == true) {
 			this.m1.changeMode("shift", this.jt.getText());
@@ -173,36 +191,57 @@ public class GUICipherView extends JFrame{
 		this.ja2.setEnabled(true);
 		this.ja2.setBackground(Color.white);
 	}
-	
+	/**
+	 * This Method changes the accessibility of the Textfields 
+	 */
 	public void blockText() {
 		this.ja.setEnabled(false);
 		this.ja.setBackground(Color.gray);
 		this.ja2.setEnabled(false);
 		this.ja2.setBackground(Color.gray);
 	}
-	
+	/**
+	 * This Method decryptes the Text which is stored in a Text field
+	 * and displays it in anohter Text field
+	 */
 	public void Decrypt() {
 		String placeholder = this.m1.decrypt(this.ja2.getText());
 		this.ja.setText(placeholder);
 		
 	}
-	
+	/**
+	 * This Method encryptes the Text which is stored in a Text field
+	 * and displays it in anohter Text field
+	 */
 	public void Encrypt() {
 		String placeholder = this.m1.encrypt(this.ja.getText());
 		this.ja2.setText(placeholder);
 	}
-	
+	/**
+	 * This Message displays the error message if an exception is thrown
+	 * @param msg : the error message
+	 */
 	public void exceptionMessage(String msg) {
 		JOptionPane.showMessageDialog(null, msg, "Error", JOptionPane.ERROR_MESSAGE);
 	}
 	//Listener
+	/**
+	 * This Method checks if the Action source matches the Button in question
+	 * @param e : the ActionEvent
+	 * @return : returns if the button was pressed
+	 */
 	public boolean isB1(ActionEvent e) {
 		if(this.b1 == e.getSource()) {
 			return true;
 		}else {
 			return false;
 		}
-	}
+	}	
+	/**
+	 * This Method checks if the Action source matches the Button in question
+	 * @param e : the ActionEvent
+	 * @return : returns if the button was pressed
+	 */
 	public boolean isB2(ActionEvent e) {
 		if(this.b2 == e.getSource()) {
 			return true;
@@ -210,6 +249,11 @@ public class GUICipherView extends JFrame{
 			return false;
 		}
 	}
+	/**
+	 * This Method checks if the Action source matches the Button in question
+	 * @param e : the ActionEvent
+	 * @return : returns if the button was pressed
+	 */
 	public boolean isB3(ActionEvent e) {
 		if(this.b3 == e.getSource()) {
 			return true;
@@ -217,6 +261,11 @@ public class GUICipherView extends JFrame{
 			return false;
 		}
 	}
+	/**
+	 * This Method checks if the Action source matches the Button in question
+	 * @param e : the ActionEvent
+	 * @return : returns if the button was pressed
+	 */
 	public boolean isB4(ActionEvent e) {
 		if(this.b4 == e.getSource()) {
 			return true;
@@ -224,6 +273,11 @@ public class GUICipherView extends JFrame{
 			return false;
 		}
 	}
+	/**
+	 * This Method checks if the Action source matches the Button in question
+	 * @param e : the ActionEvent
+	 * @return : returns if the button was pressed
+	 */
 	public boolean isB5(ActionEvent e) {
 		if(this.b5 == e.getSource()) {
 			return true;
@@ -231,6 +285,11 @@ public class GUICipherView extends JFrame{
 			return false;
 		}
 	}
+	/**
+	 * This Method checks if the Action source matches the Button in question
+	 * @param e : the ActionEvent
+	 * @return : returns if the button was pressed
+	 */
 	public boolean isB6(ActionEvent e) {
 		if(this.b6 == e.getSource()) {
 			return true;
@@ -238,6 +297,9 @@ public class GUICipherView extends JFrame{
 			return false;
 		}
 	}
+	/**
+	 * Refreshes the Frame
+	 */
 	public void refresh() {
 		this.repaint();
 	}
